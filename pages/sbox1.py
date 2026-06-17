@@ -483,7 +483,7 @@ with left_col:
         fig.patch.set_facecolor('#1a1d2e')
         ax.set_facecolor('#1a1d2e')
 
-        cmap = plt.cm.get_cmap('viridis')
+        cmap = 'viridis'
         im = ax.imshow(sbox_matrix, cmap=cmap, aspect='auto', interpolation='nearest')
 
         ax.set_xticks(range(16))
