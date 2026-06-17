@@ -383,7 +383,9 @@ with st.sidebar:
                     lines = content.strip().split("\n")
                     vals = []
                     for line in lines[1:]:  # skip header
-                        parts = line.split(",")[1:]  # skip row index
+                        parts = line.split(",")
+                        if len(parts) > 16:
+                            parts = parts[1:]  # skip row index
                         for p in parts:
                             p = p.strip().strip('"')
                             if p.startswith("0x") or p.startswith("0X"):

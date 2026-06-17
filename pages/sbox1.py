@@ -606,9 +606,9 @@ dl1, dl2, dl3 = st.columns(3)
 with dl1:
     csv_buf = io.StringIO()
     writer = csv.writer(csv_buf)
-    writer.writerow([f"+{j:X}" for j in range(16)])
+    writer.writerow([""] + [f"+{j:X}" for j in range(16)])
     for i in range(16):
-        writer.writerow([f"0x{sbox[i*16+j]:02X}" for j in range(16)])
+        writer.writerow([f"{i*16:02X}"] + [f"0x{sbox[i*16+j]:02X}" for j in range(16)])
     st.download_button(
         "⬇️ Download CSV (Tabel Hex)",
         data=csv_buf.getvalue(),
